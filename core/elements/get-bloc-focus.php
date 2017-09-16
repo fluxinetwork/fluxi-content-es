@@ -17,13 +17,13 @@
 
 		if( $fluxi_content_focus ):
 
-			$fluxi_content_focus = '<div class="fc__item fc__focus">';
+			$fluxi_content_focus = '<div class="c-focus content-jump">';
 
-			$fluxi_content_focus .= '<h2 calss="fc__focus__title">'.get_sub_field('titre_focus').'</h2>';
+			$fluxi_content_focus .= '<h2 class="c-focus__title">'.get_sub_field('titre_focus').'</h2>';
 			$fluxi_content_focus .= '<p>'.get_sub_field('texte_focus').'</p>';
 
 			if( get_sub_field('ajouter_lien_focus') == 1 ) {
-				$fluxi_content_focus .= '<a href="'.get_sub_field('url_lien').'" class="fc__focus__link">'.get_sub_field('texte_lien').'</a>';
+				$fluxi_content_focus .= '<a href="'.get_sub_field('url_lien').'" class="c-link l-jump">'.get_sub_field('texte_lien').'</a>';
 			}
 
 			$fluxi_content_focus .= '</div>';

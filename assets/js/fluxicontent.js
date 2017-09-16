@@ -54,11 +54,30 @@
     }
     // -- Accordéons
     if($('.js-accordeon').length){
-        $('.js-accordeon').click( function(e) {  
-            $('.js-accordeon.is-open').removeClass('is-open').find('div').slideToggle(); 
-            $(this).toggleClass('is-open').find('div').slideToggle();     
+
+        $('.js-accordeon').click( function(e) {   
+
+            $('.js-accordeon.is-clicked').removeClass('is-clicked');
+            $(this).addClass('is-clicked');
+
+            $('.js-accordeon').each(function() {
+
+              var target = $(this);
+
+              if ( !target.hasClass('is-clicked') && target.hasClass('is-open') ) {
+                target.removeClass('is-open').find('.js-accordeon-content').slideToggle();
+              }
+
+              if ( target.hasClass('is-clicked') && target.hasClass('is-open') ) {
+                target.removeClass('is-open').find('.js-accordeon-content').slideToggle();
+              } else if ( target.hasClass('is-clicked') && !target.hasClass('is-open') ) {
+                target.addClass('is-open').find('.js-accordeon-content').slideToggle();
+              }
+
+            });
         });
-        $('.js-accordeon').find('div').slideToggle();
+
+        $('.js-accordeon-content').slideToggle();
     }
 
     if($('.js-is-lightbox').length){
