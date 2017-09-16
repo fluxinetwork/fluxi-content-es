@@ -1,7 +1,7 @@
 <?php
 
 	/**
-	 * get_bloc_titre_1
+	 * get_bloc_titre
 	 *
 	 *  @type	function
 	 *  @date	05/03/17
@@ -11,13 +11,14 @@
 	 *  @return HTML - ACF titles fields
 	 */
 
+
 	function get_bloc_titre_1(){
 			
 		$texte_titre = get_sub_field('texte_titre');
 
-		if( $texte_titre ):
+		if ( $texte_titre ) :
 			
-			$fluxi_content_titre = '<h2>'.$texte_titre.'</h2>';
+			$fluxi_content_titre = '<h2>'. $texte_titre .'</h2>';
 
 			return $fluxi_content_titre;
 		
@@ -36,13 +37,13 @@
 	 *  @return HTML - ACF titles fields
 	 */
 
-	function get_bloc_titre_2(){
-			
-		$texte_titre = get_sub_field('texte_titre');		
+	function get_bloc_titre_2() {
 
-		if( $texte_titre ):
+		$texte_titre = get_sub_field('texte_titre');
+				
+		if ( $texte_titre ) :
 		
-			$fluxi_content_titre = '<h3>'.$texte_titre.'</h3>';
+			$fluxi_content_titre = '<h3>'. $texte_titre .'</h3>';
 
 			return $fluxi_content_titre;
 		
