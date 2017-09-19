@@ -185,7 +185,8 @@ if( ! class_exists('fluxicontent') ) :
 	    if( is_admin() ):
 		    // Only for post & page
 		    if ( get_post_type($post_id) == 'post'
-		    	|| get_post_type($post_id) == 'page' ):
+		    	|| get_post_type($post_id) == 'page'
+		    	|| get_post_type($post_id) == 'projets' ):
 		    	// If there is no ACF
 			 	if( empty($_POST['acf']) )
 			        return;
@@ -244,11 +245,8 @@ if( ! class_exists('fluxicontent') ) :
 
 			    while ( have_rows('elements_page', $post_id) ) : the_row();
 
-			        if ( get_row_layout() == 'titre_1' ):
-						$all_fluxi_content .= get_bloc_titre_1 ();
-
-					elseif ( get_row_layout() == 'titre_2' ):
-						$all_fluxi_content .= get_bloc_titre_2 ();
+			        if ( get_row_layout() == 'titre' ):
+						$all_fluxi_content .= get_bloc_titre ();
 
 					elseif ( get_row_layout() == 'texte' ):
 						$all_fluxi_content .= get_bloc_texte ();
