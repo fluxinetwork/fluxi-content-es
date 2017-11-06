@@ -19,10 +19,10 @@
 
 			$fluxi_content_accordeon = '<div class="c-accordeon content-jump js-accordeon">';
 
-			$fluxi_content_accordeon .= '<h2 class="c-accordeon__title">';
-			$fluxi_content_accordeon .= '<button class="c-roundButton c-roundButton--2icon c-accordeon__title__icon"><i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-minus" aria-hidden="true"></i></button>';
+			$fluxi_content_accordeon .= '<h3 class="c-accordeon__title">';
+			$fluxi_content_accordeon .= '<button class="c-roundButton c-roundButton--ghost c-roundButton--2icon c-accordeon__title__icon"><i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-minus" aria-hidden="true"></i></button>';
 			$fluxi_content_accordeon .= get_sub_field('titre_accordeon');
-			$fluxi_content_accordeon .= '</h2>';
+			$fluxi_content_accordeon .= '</h3>';
 
 			if( have_rows('contenu_accordeon') ):				
 
