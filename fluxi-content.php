@@ -112,7 +112,7 @@ if( ! class_exists('fluxicontent') ) :
 			// isotope
 			//wp_register_script( 'isotope', FC_PLUGIN_URL . 'assets/js/vendors/jquery.isotope.min.js', array(), null, true );
 
-			// lightslider
+			/*// lightslider
 			wp_register_script( 'lightslider', FC_PLUGIN_URL . 'assets/js/vendors/lg-2-lightslider.min.js', array(), null, true );
 
 			// lightgallery
@@ -120,9 +120,14 @@ if( ! class_exists('fluxicontent') ) :
 			wp_register_script( 'lg-thumbnail', FC_PLUGIN_URL . 'assets/js/vendors/lg-thumbnail.min.js', array(), null, true );
 			wp_register_script( 'lg-video', FC_PLUGIN_URL . 'assets/js/vendors/lg-video.min.js', array(), null, true );
 			wp_register_script( 'lightgallery', FC_PLUGIN_URL . 'assets/js/vendors/lg-1-lightgallery.min.js', array(), null, true );
+			*/
+
+			// compile scripts
+			wp_register_script( 'allfluxivendors', FC_PLUGIN_URL . 'assets/js/vendors/all.fluxi.min.js', array(), null, true );
+
 
 			// fluxicontent
-			wp_register_script( 'fluxicontent', FC_PLUGIN_URL . 'assets/js/fluxicontent.js', array('jQuery','lightslider','lightgallery','lg-fullscreen','lg-thumbnail','lg-video','lightgallery'), null, true );
+			wp_register_script( 'fluxicontent', FC_PLUGIN_URL . 'assets/js/fluxicontent.js', array('jquery','allfluxivendors'), null, true );
 
 			// Enqueue
 			wp_enqueue_script( 'fluxicontent' );
@@ -135,13 +140,15 @@ if( ! class_exists('fluxicontent') ) :
 		// Only for post & page
 		if( is_page() || is_single() ):
 			// Register
-			wp_register_style( 'lightgallery', FC_PLUGIN_URL . 'assets/css/lightgallery.css', array(), null );
-		    wp_register_style( 'lightslider', FC_PLUGIN_URL . 'assets/css/lightslider.css', array(), null );
+			//wp_register_style( 'lightgallery', FC_PLUGIN_URL . 'assets/css/lightgallery.css', array(), null );
+		    //wp_register_style( 'lightslider', FC_PLUGIN_URL . 'assets/css/lightslider.css', array(), null );
 		    //wp_register_style( 'fluxicontentcss', FC_PLUGIN_URL . 'assets/css/fluxi-content.css', array(), null );
+		    wp_register_style( 'vendorsmin', FC_PLUGIN_URL . 'assets/css/vendors.min.css', array(), null );
 		    // Enqueue
-		    wp_enqueue_style( 'lightgallery' );
-		    wp_enqueue_style( 'lightslider' );
+		    //wp_enqueue_style( 'lightgallery' );
+		    //wp_enqueue_style( 'lightslider' );
 		    //wp_enqueue_style( 'fluxicontentcss' );
+			wp_enqueue_style( 'vendorsmin' );
 
 		endif;
 	}
