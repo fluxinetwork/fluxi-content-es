@@ -65,13 +65,13 @@
               var target = $(this);
 
               if ( !target.hasClass('is-clicked') && target.hasClass('is-open') ) {
-                target.removeClass('is-open').find('.js-accordeon-content').slideToggle();
+                target.removeClass('is-open').next('.js-accordeon-content').slideToggle();
               }
 
               if ( target.hasClass('is-clicked') && target.hasClass('is-open') ) {
-                target.removeClass('is-open').find('.js-accordeon-content').slideToggle();
+                target.removeClass('is-open').next('.js-accordeon-content').slideToggle();
               } else if ( target.hasClass('is-clicked') && !target.hasClass('is-open') ) {
-                target.addClass('is-open').find('.js-accordeon-content').slideToggle();
+                target.addClass('is-open').next('.js-accordeon-content').slideToggle();
               }
 
             });

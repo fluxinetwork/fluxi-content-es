@@ -11,18 +11,18 @@
 	 *  @return HTML - ACF accordeon fields
 	 */
 
-	function get_bloc_accordeon (){
+	function get_bloc_accordeon() {
 
 		$fluxi_content_accordeon = get_sub_field('titre_accordeon');		
 
 		if( $fluxi_content_accordeon ):
 
-			$fluxi_content_accordeon = '<div class="c-accordeon content-jump js-accordeon">';
+			$fluxi_content_accordeon = '<div class="c-accordeon content-jump">';
 
-			$fluxi_content_accordeon .= '<h3 class="c-accordeon__title">';
-			$fluxi_content_accordeon .= '<button class="c-roundButton c-roundButton--ghost c-roundButton--2icon c-accordeon__title__icon"><i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-minus" aria-hidden="true"></i></button>';
-			$fluxi_content_accordeon .= get_sub_field('titre_accordeon');
-			$fluxi_content_accordeon .= '</h3>';
+			$fluxi_content_accordeon .= '<div class="c-accordeon__title js-accordeon">';
+				$fluxi_content_accordeon .= '<button class="c-roundButton c-roundButton--ghost c-roundButton--2icon c-accordeon__title__icon"><i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-minus" aria-hidden="true"></i></button>';
+				$fluxi_content_accordeon .= '<h3 class="c-accordeon__title">'.get_sub_field('titre_accordeon').'</h3>';
+			$fluxi_content_accordeon .= '</div>';
 
 			if( have_rows('contenu_accordeon') ):				
 
