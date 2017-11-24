@@ -64,8 +64,8 @@ if( ! class_exists('fluxicontent') ) :
 		function initialize() {
 
 			// Actions - wp_enqueue_scripts
-			add_action('wp_enqueue_scripts','register_fluxicontent_scripts',100);
-			add_action('wp_enqueue_scripts', 'register_fluxicontent_styles', 100);
+			//add_action('wp_enqueue_scripts','register_fluxicontent_scripts',100);
+			//add_action('wp_enqueue_scripts', 'register_fluxicontent_styles', 100);
 
 			// Actions - init
 			add_action('init',	array($this, 'init'), 5);
