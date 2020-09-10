@@ -28,7 +28,7 @@
 
 		$output .= '<div class="l-imgTxt content-jump">';
 			$output .= '<div class="l-imgTxt__img">';
-				$output .= '<img src="'.$img['sizes']['medium'].'" alt="'.$img['name'].'" />';
+				$output .= get_lazy_img($img);
 			$output .= '</div>';
 			$output .= '<div class="l-imgTxt__txt">';
 				if ( $titre ) {
