@@ -21,7 +21,7 @@
 
 		if( !empty($texte_titre) ):	
 
-			if(get_sub_field('ajouter_sommaire')):
+			if($ajouter_sommaire):
 				if(get_sub_field('titre_sommaire')):
 					$short_title = get_sub_field('titre_sommaire');
 				else:
