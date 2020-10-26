@@ -63,10 +63,6 @@ if( ! class_exists('fluxicontent') ) :
 
 		function initialize() {
 
-			// Actions - wp_enqueue_scripts
-			//add_action('wp_enqueue_scripts','register_fluxicontent_scripts',100);
-			//add_action('wp_enqueue_scripts', 'register_fluxicontent_styles', 100);
-
 			// Actions - init
 			add_action('init',	array($this, 'init'), 5);
 			
@@ -98,61 +94,6 @@ if( ! class_exists('fluxicontent') ) :
 		}
 
 	}
-
-	
-
-	/*
-	 * Register plugin scripts
-	 */
-
-	function register_fluxicontent_scripts () {
-		// Only for post & page
-		if( is_page() || is_single() ):
-
-			// isotope
-			//wp_register_script( 'isotope', FC_PLUGIN_URL . 'assets/js/vendors/jquery.isotope.min.js', array(), null, true );
-
-			/*// lightslider
-			wp_register_script( 'lightslider', FC_PLUGIN_URL . 'assets/js/vendors/lg-2-lightslider.min.js', array(), null, true );
-
-			// lightgallery
-			wp_register_script( 'lg-fullscreen', FC_PLUGIN_URL . 'assets/js/vendors/lg-fullscreen.min.js', array(), null, true );
-			wp_register_script( 'lg-thumbnail', FC_PLUGIN_URL . 'assets/js/vendors/lg-thumbnail.min.js', array(), null, true );
-			wp_register_script( 'lg-video', FC_PLUGIN_URL . 'assets/js/vendors/lg-video.min.js', array(), null, true );
-			wp_register_script( 'lightgallery', FC_PLUGIN_URL . 'assets/js/vendors/lg-1-lightgallery.min.js', array(), null, true );
-			*/
-
-			// compile scripts
-			wp_register_script( 'allfluxivendors', FC_PLUGIN_URL . 'assets/js/vendors/all.fluxi.min.js', array(), null, true );
-
-
-			// fluxicontent
-			wp_register_script( 'fluxicontent', FC_PLUGIN_URL . 'assets/js/fluxicontent.js', array('jquery','allfluxivendors'), null, true );
-
-			// Enqueue
-			wp_enqueue_script( 'fluxicontent' );
-
-		endif;
-
-	}
-
-	function register_fluxicontent_styles () {
-		// Only for post & page
-		if( is_page() || is_single() ):
-			// Register
-			//wp_register_style( 'lightgallery', FC_PLUGIN_URL . 'assets/css/lightgallery.css', array(), null );
-		    //wp_register_style( 'lightslider', FC_PLUGIN_URL . 'assets/css/lightslider.css', array(), null );
-		    //wp_register_style( 'fluxicontentcss', FC_PLUGIN_URL . 'assets/css/fluxi-content.css', array(), null );
-		    wp_register_style( 'vendorsmin', FC_PLUGIN_URL . 'assets/css/vendors.min.css', array(), null );
-		    // Enqueue
-		    //wp_enqueue_style( 'lightgallery' );
-		    //wp_enqueue_style( 'lightslider' );
-		    //wp_enqueue_style( 'fluxicontentcss' );
-			wp_enqueue_style( 'vendorsmin' );
-
-		endif;
-	}
-
 
 
 	/**
@@ -254,19 +195,19 @@ if( ! class_exists('fluxicontent') ) :
 			    while ( have_rows('elements_page', $post_id) ) : the_row();
 
 			        if ( get_row_layout() == 'titre' ):
-						$all_fluxi_content .= get_bloc_titre ();
+						$all_fluxi_content .= get_bloc_titre();
 
 					elseif ( get_row_layout() == 'texte' ):
-						$all_fluxi_content .= get_bloc_texte ();
+						$all_fluxi_content .= get_bloc_texte();
 
 					elseif ( get_row_layout() == 'image' ):
-						$all_fluxi_content .= get_bloc_image ();
+						$all_fluxi_content .= get_bloc_image();
 
 					elseif ( get_row_layout() == 'liste' ):
-						$all_fluxi_content .= get_bloc_liste ();
+						$all_fluxi_content .= get_bloc_liste();
 
 					elseif ( get_row_layout() == 'citation' ):
-						$all_fluxi_content .= get_bloc_citation ();
+						$all_fluxi_content .= get_bloc_citation();
 
 					elseif ( get_row_layout() == 'galerie' ):
 						$all_fluxi_content .= get_bloc_galerie();
