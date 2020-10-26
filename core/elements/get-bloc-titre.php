@@ -17,6 +17,7 @@
 			
 		$taille_titre = get_sub_field('taille_titre');
 		$texte_titre = get_sub_field('texte_titre');		
+		$ajouter_sommaire = get_sub_field('ajouter_sommaire');
 
 		if( !empty($texte_titre) ):	
 
