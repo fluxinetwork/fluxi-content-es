@@ -21,6 +21,8 @@
 
 		if( !empty($texte_titre) ):	
 
+			$jsClass = ( $taille_titre == '2' ) ? 'js-sommaire' : '';
+
 			if($ajouter_sommaire):
 				if(get_sub_field('titre_sommaire')):
 					$short_title = get_sub_field('titre_sommaire');
@@ -28,7 +30,7 @@
 					$short_title = cut_string( $texte_titre, 40);
 				endif;
 
-				$fluxi_content_titre = '<h'.$taille_titre.' class="js-sommaire" data-title="'.$short_title.'">'.$texte_titre.'</h'.$taille_titre.'>';
+				$fluxi_content_titre = '<h'.$taille_titre.' class="'.$jsClass.'" data-title="'.$short_title.'">'.$texte_titre.'</h'.$taille_titre.'>';
 			else:
 				$fluxi_content_titre = '<h'.$taille_titre.'>'.$texte_titre.'</h'.$taille_titre.'>';
 			endif;
