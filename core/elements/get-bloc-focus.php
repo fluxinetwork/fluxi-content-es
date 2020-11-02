@@ -1,4 +1,4 @@
-<?php 	
+<?php
 
 	/**
 	 * get_bloc_focus
@@ -13,11 +13,13 @@
 
 	function get_bloc_focus (){
 
-		$fluxi_content_focus = get_sub_field('titre_focus');		
+		$fluxi_content_focus = get_sub_field('titre_focus');
 
 		if( $fluxi_content_focus ):
 
-			$fluxi_content_focus = '<div class="c-focus content-jump">';
+			$fluxi_content_focus = '<div class="content-jump content-wide">';
+
+			$fluxi_content_focus .= '<div class="c-focus">';
 
 			$fluxi_content_focus .= '<h2 class="c-focus__title">'.get_sub_field('titre_focus').'</h2>';
 			$fluxi_content_focus .= '<p>'.get_sub_field('texte_focus').'</p>';
@@ -28,10 +30,12 @@
 
 			$fluxi_content_focus .= '</div>';
 
+			$fluxi_content_focus .= '</div>';
+
 			return $fluxi_content_focus;
 
-		endif;	
+		endif;
 
 	}
-		
+
 ?>
