@@ -27,7 +27,7 @@
 				if(get_sub_field('titre_sommaire')):
 					$short_title = get_sub_field('titre_sommaire');
 				else:
-					$short_title = cut_string( $texte_titre, 40);
+					$short_title = fx_cut_string( $texte_titre, 40);
 				endif;
 
 				$fluxi_content_titre = '<h'.$taille_titre.' class="'.$jsClass.'" data-title="'.$short_title.'">'.$texte_titre.'</h'.$taille_titre.'>';
