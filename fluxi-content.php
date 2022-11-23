@@ -112,6 +112,7 @@ if( ! class_exists('fluxicontent') ) :
 	require_once( FC_PLUGIN_DIR . 'core/elements/get-bloc-lien.php' );
 	require_once( FC_PLUGIN_DIR . 'core/elements/get-bloc-accordeon.php' );
 	require_once( FC_PLUGIN_DIR . 'core/elements/get-bloc-image-texte.php' );
+	require_once( FC_PLUGIN_DIR . 'core/elements/get-bloc-cta.php' );
 	
 	//require_once( FC_PLUGIN_DIR . 'core/elements/get-bloc-texte-image.php' );
 	//require_once( FC_PLUGIN_DIR . 'core/elements/get-bloc-cliquable.php' );
@@ -230,6 +231,8 @@ if( ! class_exists('fluxicontent') ) :
 					elseif ( get_row_layout() == 'image_texte' ):
 						$all_fluxi_content .= get_bloc_image_texte();
 
+					elseif ( get_row_layout() == 'cta' ):
+						$all_fluxi_content .= get_bloc_cta();
 
 			        endif;
 
