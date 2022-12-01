@@ -17,7 +17,7 @@
 		$image_caption = $image_only['caption'];	
 		$fluxi_content_image = '';
 
-		$fluxi_content_image .= '<a href="'.$image_only['sizes']['large'].'" class="js-lightbox content-jump content-wide"><figure>'.get_lazy_img($image_only);
+		$fluxi_content_image .= '<a href="'.$image_only['sizes']['large'].'" class="js-lightbox content-jump content-wide"><figure>'.fx_get_lazy_img($image_only);
 				
 			if(  $image_caption ):									
 				$fluxi_content_image .= '<figcaption>'.$image_caption.'</figcaption>';
