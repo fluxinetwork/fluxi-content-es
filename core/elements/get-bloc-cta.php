@@ -30,7 +30,7 @@
 					$count_blocs = count($fields['blocs_boutons']);
 					$modifier = ($count_blocs == 1) ? '-mono' : '';
 
-					$output .= '<div class="l-jump -small l-duo -center '.$modifier.'">';
+					$output .= '<div class="l-jump -small l-duo -center -respond '.$modifier.'">';
 
 					for ($i = 0; $i < $count_blocs; $i++) :
 						$bloc = $fields['blocs_boutons'][$i];
@@ -47,10 +47,12 @@
 							
 							$output .= '<div class="l-duo__item '.$bg_colors[$color_index].'">';
 								$output .= '<div class="l-duo__item__content bg-pattern-occitanie '.$pattern_occitanie_modifier[$color_index].'">';
+									$jump_bt = '';
 									if ($texte) :
+										$jump_bt = 'l-jump -small';
 										$output .= '<p>'.$texte.'</p>';
 									endif;
-									$output .= '<div class="l-jump -small">';
+									$output .= '<div class="'.$jump_bt.'">';
 										$output .= '<a href="'.$url_bouton.'" class="c-button -cta '.$button_color_modifier[$color_index].'" target="'.$target_lien.'">'.$texte_bouton.'</a>';
 									$output .= '</div>';
 								$output .= '</div>';
